@@ -1,22 +1,35 @@
-🍽 Comanda y Gestión de Reservas para Bares
+🍽 Comanda y Gestión de Reservas – Abacería La Juana
 
-📖 Descripción
-Unas de mis primeras Aplicaciones desarrollando Front con Ionic y Back con Spring juntos
+Sistema completo para la gestión de reservas y comandas de un restaurante, con integración entre web (WordPress), backend (Spring Boot) y app móvil (Ionic/Angular).
+Este proyecto unifica la experiencia del cliente y del personal del local en un único flujo digital moderno.
 
-Este proyecto permite la gestión completa de reservas de un restaurante mediante un flujo web y móvil.
+📖 Descripción del Proyecto
 
-Los clientes pueden realizar reservas desde la web del restaurante.
+Es una de mis primeras Apps desarrolladas con Ionic y Spring.
 
-El personal gestiona las reservas desde una app móvil desarrollada con Ionic.
+Este sistema permite:
 
-El backend se encarga de almacenar, consultar y actualizar reservas, además de enviar notificaciones de confirmación por correo.
+Que los clientes realicen reservas desde la página web del restaurante.
 
-🏛 Arquitectura del Proyecto
-🌐 Frontend Web (WordPress Plugin)
+Que el personal gestione reservas y comandas desde una aplicación móvil.
 
-Plugin Custom Form Plugin para reservas.
+Que el backend administre la información, procese reservas y envíe notificaciones por correo.
 
-Permite al cliente introducir:
+El objetivo es automatizar y simplificar la operativa diaria de un restaurante real: Abacería La Juana.
+
+🏛 Arquitectura General
+
+El proyecto está dividido en tres capas principales:
+
+Frontend Web (WordPress)  →  Backend (Spring Boot API)  →  App Móvil (Ionic)
+
+🔹 1. Frontend Web (WordPress Plugin)
+
+Se desarrolla un plugin propio para gestionar el formulario de reservas.
+
+Funcionalidades:
+
+Formulario de reserva con los campos:
 
 Nombre
 
@@ -28,74 +41,101 @@ Fecha
 
 Número de comensales
 
-Los datos se validan y sanitizan antes de enviarlos al backend.
+Validación y sanitización de datos.
 
-Incluye endpoints REST para:
+Envío seguro al backend mediante llamadas REST.
 
-Obtener reservas
+Endpoints REST incluidos en el plugin:
 
-Filtrar por fecha
+GET /reservas → Obtener todas las reservas desde WordPress
 
-Actualizar estado de confirmación
+GET /reservas?fecha= → Filtrar por fecha
 
-⚙️ Backend (Spring Boot / Java)
+PUT /reservas/{id}/confirmar → Actualizar estado de confirmación
 
-API REST desarrollada en Spring Boot (JuanaApplication).
+🔹 2. Backend (Spring Boot / Java)
+
+La API REST centraliza toda la lógica del sistema.
 
 Endpoints principales:
 
-GET /api/reservas → Obtener todas las reservas
+GET /api/reservas → Listar reservas
 
-POST /api/reservas → Crear una nueva reserva
+POST /api/reservas → Crear reserva
 
-Modelo Reserva con campos:
+PUT /api/reservas/{id} → Actualizar datos o estado
 
-id, nombre, telefono, correo, fecha, numComensales
+Modelo Reserva:
 
-Repositorio ReservaRepository usando Spring Data JPA para operaciones CRUD.
+Campo	Tipo
+id	Long
+nombre	String
+telefono	String
+correo	String
+fecha	LocalDate
+numComensales	int
+estado	Enum
 
-Permite integración con la app móvil y envío automático de correos al actualizar el estado de la reserva.
+Características adicionales:
 
-📱 App Móvil (Ionic / Angular)
+Repositorio JPA para operaciones CRUD.
 
-Consume la API REST para mostrar reservas activas y finalizadas.
+Envío de correos automáticos al confirmar/rechazar reservas.
+
+Preparado para integrarse con la app móvil.
+
+🔹 3. App Móvil (Ionic / Angular)
+
+Aplicación usada por el personal del restaurante.
 
 Funcionalidades:
 
-Ver reservas por día
+Visualización de reservas por fecha.
 
-Aceptar o rechazar reservas
+Aceptar o rechazar reservas.
 
-Mostrar estado de confirmación
+Estado de confirmación en tiempo real.
 
-Gestión de comandas asociadas a cada reserva
+Gestión de comandas asociadas a una reserva.
 
-🔄 Flujo de Trabajo
+Interacción directa con la API REST.
 
-El cliente realiza una reserva desde la página web.
+🔄 Flujo Completo del Sistema
+Cliente → Web WordPress → Backend API → Base de Datos → App Móvil → Cliente
 
-El plugin de WordPress valida los datos y los envía al backend.
 
-El backend guarda la reserva en la base de datos (MySQL / MariaDB / PostgreSQL).
+1️⃣ El cliente envía una reserva desde la web.
+2️⃣ WordPress valida los datos y los envía al backend.
+3️⃣ El backend guarda la reserva en MySQL/PostgreSQL/MariaDB.
+4️⃣ La app Ionic obtiene la reserva mediante la API.
+5️⃣ El personal acepta/rechaza la solicitud.
+6️⃣ El cliente recibe un correo automático de confirmación.
 
-La app Ionic consulta la API y muestra las reservas al personal.
-
-El personal puede aceptar o rechazar reservas, enviando notificaciones automáticas por correo al cliente.
-
-🛠 Tecnologías Usadas
+🛠 Tecnologías Utilizadas
 Capa	Tecnología
 Web	WordPress (PHP)
-Backend	Spring Boot (Java) con JPA/Hibernate
-Móvil	Ionic / Angular
+Backend	Spring Boot (Java), JPA/Hibernate
+App Móvil	Ionic / Angular
 Base de Datos	MySQL / PostgreSQL / MariaDB
-🎯 Objetivo
+Comunicación	API REST JSON
+🎯 Objetivo del Proyecto
 
-Crear un sistema integrado de reservas que unifique la experiencia web y móvil, automatizando el flujo de gestión de reservas y permitiendo al personal del restaurante controlar fácilmente las solicitudes de los clientes.
+Crear un ecosistema digital unificado para un restaurante real, que permita:
 
-🚀 Próximos pasos
+Automatizar reservas.
 
-Añadir autenticación para el personal del restaurante en la app móvil.
+Facilitar la gestión del personal.
 
-Integración de notificaciones push para reservas nuevas.
+Integrar web + backend + móvil sin fricciones.
 
-Panel web administrativo para visualizar y filtrar reservas.
+Mejorar la experiencia del cliente.
+
+🚀 Próximas Mejoras
+
+🔐 Sistema de autenticación para personal en la app móvil.
+
+🔔 Notificaciones push para nuevas reservas.
+
+🖥️ Panel web administrativo completo.
+
+📊 Estadísticas internas de ocupación y rendimiento.
