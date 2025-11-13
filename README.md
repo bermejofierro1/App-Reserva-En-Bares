@@ -3,6 +3,8 @@
 
 ⭐ Sistema integrado Web + Backend + App Móvil
 
+Es una de mis primeras Apps desarrolladas con Ionic y Spring
+
 <b>
 📖 Descripción del Proyecto
 </b>
