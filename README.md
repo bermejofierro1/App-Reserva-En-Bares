@@ -1,11 +1,11 @@
 
-<p>🍽️ Comanda y Gestión de Reservas – Abacería La Juana</p>
+<b>🍽️ Comanda y Gestión de Reservas – Abacería La Juana</b>
 
 ⭐ Sistema integrado Web + Backend + App Móvil
 
-<p>
+<b>
 📖 Descripción del Proyecto
-</p>
+</b>
 
 Este proyecto implementa un sistema completo de gestión de reservas y comandas para la Abacería La Juana.
 
@@ -13,9 +13,9 @@ Los clientes reservan desde la web (WordPress).
 El personal gestiona reservas desde la app móvil (Ionic).
 El backend (Spring Boot) almacena, consulta, actualiza y genera notificaciones por correo.
 
-<p>
+<b>
 🏛️ Arquitectura General
-</p>
+</b>
 
 El sistema está dividido en tres capas:
 
@@ -25,9 +25,9 @@ Frontend Web (WordPress)
         ↓
  App Móvil (Ionic / Angular)
 
-<p>
+<b>
 🌐 Frontend Web – WordPress Plugin
-</p>
+</b>
 
 Plugin personalizado que incluye:
 
@@ -54,9 +54,9 @@ GET /reservas
 GET /reservas?fecha=
 PUT /reservas/{id}/confirmar
 
-<p>
+<b>
 ⚙️ Backend – API REST con Spring Boot
- </p>
+ </b>
 
 El backend gestiona toda la lógica del sistema:
 
@@ -85,9 +85,9 @@ correo	String
 fecha	LocalDate
 numComensales	int
 estado	Enum
-<p>
+<b>
 📱 App Móvil – Ionic / Angular
-</p>
+</b>
 
 Aplicación diseñada para el personal del restaurante.
 
@@ -103,9 +103,9 @@ Gestionar comandas por reserva
 
 Comunicación directa con la API REST
 
-<p>
+<b>
 🔄 Flujo Completo del Sistema
-</p>
+</b>
 Cliente → WordPress → Backend API → BD → App Móvil → Cliente
 
 
@@ -120,9 +120,9 @@ La app móvil consulta la API.
 El personal gestiona la reserva.
 
 El cliente recibe el correo de confirmación.
-
-<p>🛠️ Tecnologías Utilizadas
-</p>
+<b>
+🛠️ Tecnologías Utilizadas
+</b>
 
 Capa	Tecnología
 Web	WordPress (PHP)
@@ -130,6 +130,7 @@ Backend	Spring Boot (Java), JPA/Hibernate
 Móvil	Ionic / Angular
 BD	MySQL / PostgreSQL / MariaDB
 API	REST / JSON
+
 <b>
 🎯 Objetivo del Proyecto
 </b>
