@@ -1,27 +1,11 @@
-<div align="center">
-🍽️ Comanda y Gestión de Reservas – Abacería La Juana
+
+<p>🍽️ Comanda y Gestión de Reservas – Abacería La Juana</p>
 
 ⭐ Sistema integrado Web + Backend + App Móvil
 
-<!-- BADGES -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-<div align="center">
+<p>
 📖 Descripción del Proyecto
-</div>
+</p>
 
 Este proyecto implementa un sistema completo de gestión de reservas y comandas para la Abacería La Juana.
 
@@ -29,9 +13,9 @@ Los clientes reservan desde la web (WordPress).
 El personal gestiona reservas desde la app móvil (Ionic).
 El backend (Spring Boot) almacena, consulta, actualiza y genera notificaciones por correo.
 
-<div align="center">
+<p>
 🏛️ Arquitectura General
-</div>
+</p>
 
 El sistema está dividido en tres capas:
 
@@ -41,9 +25,9 @@ Frontend Web (WordPress)
         ↓
  App Móvil (Ionic / Angular)
 
-<div align="center">
+<p>
 🌐 Frontend Web – WordPress Plugin
-</div>
+</p>
 
 Plugin personalizado que incluye:
 
@@ -70,9 +54,9 @@ GET /reservas
 GET /reservas?fecha=
 PUT /reservas/{id}/confirmar
 
-<div align="center">
+<p>
 ⚙️ Backend – API REST con Spring Boot
-</div>
+ </p>
 
 El backend gestiona toda la lógica del sistema:
 
@@ -101,9 +85,9 @@ correo	String
 fecha	LocalDate
 numComensales	int
 estado	Enum
-<div align="center">
+<p>
 📱 App Móvil – Ionic / Angular
-</div>
+</p>
 
 Aplicación diseñada para el personal del restaurante.
 
@@ -119,9 +103,9 @@ Gestionar comandas por reserva
 
 Comunicación directa con la API REST
 
-<div align="center">
+<p>
 🔄 Flujo Completo del Sistema
-</div>
+</p>
 Cliente → WordPress → Backend API → BD → App Móvil → Cliente
 
 
@@ -137,24 +121,24 @@ El personal gestiona la reserva.
 
 El cliente recibe el correo de confirmación.
 
-<div align="center">
-🛠️ Tecnologías Utilizadas
-</div>
+<p>🛠️ Tecnologías Utilizadas
+</p>
+
 Capa	Tecnología
 Web	WordPress (PHP)
 Backend	Spring Boot (Java), JPA/Hibernate
 Móvil	Ionic / Angular
 BD	MySQL / PostgreSQL / MariaDB
 API	REST / JSON
-<div align="center">
+<b>
 🎯 Objetivo del Proyecto
-</div>
+</b>
 
 Crear un sistema moderno que automatice la gestión de reservas y mejore la comunicación entre cliente y personal, integrando todas las capas en un único flujo optimizado.
 
-<div align="center">
+<b>
 🚀 Próximas Mejoras
-</div>
+</b>
 
 🔐 Autenticación en la app móvil
 
