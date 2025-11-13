@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>HOME</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let reserva of reservas">
+      <ion-label>
+        <h2>{{ reserva.nombre }}</h2>
+        <p>{{ reserva.fecha }}</p>
+        <p>{{ reserva.personas }} personas</p>
+        <p>{{ reserva.telefono }}</p>
+        <p>{{ reserva.email }}</p>
+        
+        <!-- Mostrar el estado de confirmación -->
+        <p>
+          {{ reserva.confirmada === 'pendiente' 
+             ? 'Confirmada: Pendiente' 
+             : reserva.confirmada === 'aceptada' 
+             ? 'Confirmada: Aceptada' 
+             : 'Confirmada: Rechazada' }}
+        </p>
+
+        <!-- Botones de Aceptar y Rechazar -->
+        <!-- Botones de Aceptar y Rechazar -->
+<ion-button 
+(click)="actualizarEstadoReserva(reserva.id, 'aceptada')" 
+color="success" 
+*ngIf="reserva.confirmada === 'pendiente'">
+Aceptar
+</ion-button>
+
+<ion-button 
+(click)="actualizarEstadoReserva(reserva.id, 'rechazada')" 
+color="danger" 
+*ngIf="reserva.confirmada === 'pendiente'">
+Rechazar
+</ion-button>
+
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

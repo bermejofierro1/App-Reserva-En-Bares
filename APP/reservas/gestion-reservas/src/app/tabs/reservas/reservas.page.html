@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Reservas Pendientes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let reserva of reservas">
+      <ion-label>
+        <h2>{{ reserva.nombre }}</h2>
+        <p>{{ reserva.fecha }}</p>
+        <p>{{ reserva.personas }} personas</p>
+        <p>{{ reserva.telefono }}</p>
+        <p>{{ reserva.email }}</p>
+        <p><strong>Estado:</strong> Pendiente</p>
+
+        <ion-button 
+          (click)="actualizarEstadoReserva(reserva.id, 'aceptada')" 
+          color="success">
+          Aceptar
+        </ion-button>
+
+        <ion-button 
+          (click)="actualizarEstadoReserva(reserva.id, 'rechazada')" 
+          color="danger">
+          Rechazar
+        </ion-button>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

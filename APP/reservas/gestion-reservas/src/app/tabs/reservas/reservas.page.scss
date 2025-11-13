@@ -1,0 +1,90 @@
+ion-content {
+    --padding-start: 16px;
+    --padding-end: 16px;
+    --padding-top: 16px;
+    --padding-bottom: 16px;
+  }
+  
+  ion-list {
+    margin-bottom: 20px;
+  }
+  
+  ion-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  ion-label {
+    width: 100%;
+  }
+  
+  h2 {
+    font-size: 1.2em;
+    margin-bottom: 8px;
+    color: #333;
+  }
+  
+  p {
+    font-size: 1em;
+    margin-bottom: 4px;
+    color: #666;
+  }
+  
+  strong {
+    font-weight: 600;
+  }
+  
+  ion-button {
+    margin-right: 8px;
+  }
+
+  ion-button[color="success"] {
+    --background: #4CAF50;
+    --background-activated: #388E3C;
+    --background-focused: #388E3C;
+    --background-hover: #388E3C;
+    --color: #fff;
+  }
+  
+  ion-button[color="danger"] {
+    --background: #F44336;
+    --background-activated: #D32F2F;
+    --background-focused: #D32F2F;
+    --background-hover: #D32F2F;
+    --color: #fff;
+  }
+
+  p strong {
+    color: #FF9800; /* Color naranja para "Pendiente" */
+  }ion-header {
+    --background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradiente colorido */
+    --border-color: transparent; /* Sin borde */
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+    --padding-top: 10px; /* Espacio superior */
+    --padding-bottom: 10px; /* Espacio inferior */
+  }
+  
+  ion-toolbar {
+    --background: transparent; /* Toolbar transparente */
+    --padding-start: 16px;
+    --padding-end: 16px;
+    --min-height: 70px; /* Altura del toolbar */
+  }
+  
+  ion-title {
+    font-size: 1.5em; /* Tamaño de fuente del título */
+    font-weight: 700; /* Negrita */
+    color: #87CEEB; /* Título blanco */
+    text-align: center; /* Centrar el título */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Sombra de texto */
+    width: 100%; /* Ancho completo */
+  }
+  
+  /* Opcional: Iconos más grandes y con sombra */
+  ion-toolbar ion-icon {
+    font-size: 1.5em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  }

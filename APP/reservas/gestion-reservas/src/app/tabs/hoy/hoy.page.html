@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+      <ion-title>
+          Reservas de Hoy
+      </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+      <ion-label position="floating">Seleccionar Fecha</ion-label>
+      <ion-datetime displayFormat="YYYY-MM-DD" (ionChange)="filtrarPorFecha($event)"></ion-datetime>
+  </ion-item>
+
+  <ion-list *ngIf="reservas.length > 0; else noReservas">
+      <ion-item *ngFor="let reserva of reservas">
+          <ion-label>
+              <h2>{{ reserva.nombre }}</h2>
+              <p>Teléfono: {{ reserva.telefono }}</p>
+              <p>Correo: {{ reserva.email }}</p>
+              <p>Hora: {{ reserva.fecha | date:'HH:mm' }}</p>
+              <p>Personas: {{ reserva.personas }}</p>
+              <p>Estado: {{ reserva.confirmada }}</p>
+          </ion-label>
+      </ion-item>
+  </ion-list>
+  <ng-template #noReservas>
+      <p>No hay reservas para la fecha indicada.</p>
+  </ng-template>
+</ion-content>
